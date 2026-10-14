@@ -3,23 +3,14 @@
     using PlantUML.Logic;
     public static class ObjectDiagram
     {
-        public static string DiagramPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        public static string FilePath = Path.Combine(DiagramPath, "od_LinkedList.puml");
+        private static readonly ObjectDiagramCreator diagramCreator = new("od_Stack.puml");
 
         public static void Generate(params object[] items)
         {
-            var diagramData = DiagramCreator.CreateObjectDiagram(100, items).ToList();
-
-            if (diagramData.Any())
+            foreach (var item in items)
             {
-                diagramData.Insert(0, "@start" + "uml stack");
-                diagramData.Add("@end" + "uml");
+                diagramCreator.CreateToFile(item);
             }
-            if (Path.Exists(DiagramPath) == false)
-            {
-                Directory.CreateDirectory(DiagramPath);
-            }
-            File.WriteAllLines(FilePath, diagramData);
         }
     }
 }

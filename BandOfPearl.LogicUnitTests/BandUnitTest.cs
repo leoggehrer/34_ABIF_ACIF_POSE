@@ -135,7 +135,7 @@ namespace BandOfPearl.LogicUnitTests
                 band.AddPearl(new Pearl("Blue", 6));
                 band.AddPearl(new Pearl("Red", 7));
                 Assert.AreEqual(7, band.Count);
-                Pearl getPearl = band.GetPearlAtPosition(7);
+                Pearl? getPearl = band.GetPearlAtPosition(7);
                 Assert.IsNull(getPearl);
                 getPearl = band.GetPearlAtPosition(-1);
                 Assert.IsNull(getPearl);

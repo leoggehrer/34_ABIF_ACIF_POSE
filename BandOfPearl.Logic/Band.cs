@@ -38,7 +38,7 @@
             }
        }
 
-        public Pearl? GetPearlAtPosition(int position)
+        public Pearl GetPearlAtPosition(int position)
         {
             Pearl? result = null;
             int counter = 0;

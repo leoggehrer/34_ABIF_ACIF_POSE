@@ -18,8 +18,10 @@
         {
             get { return _weight; }
         }
+
+        public Pearl? NextPearl { get => _nextPearl; set => _nextPearl = value; }
         #endregion properties
-        
+
         #region constructors
         public Pearl(string? color, double weight)
         {
